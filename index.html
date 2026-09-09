@@ -7,441 +7,573 @@
 <title>Ramon Machado Blasius</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
   :root{
-    --bg:#E9EDEE;
-    --surface:#FAFBFB;
-    --ink:#0F2429;
-    --ink-2:#33484E;
-    --muted:#5C7176;
-    --line:#C9D5D7;
-    --line-soft:#DCE4E5;
-    --accent:#C4551F;
-    --petrol:#0F6E78;
-    --slate:#7F979C;
-    --ok:#2F7A57;
-    --focus:#0F6E78;
-    --display:"Archivo","Helvetica Neue",Arial,sans-serif;
-    --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+    --bg:#F1F3F7;
+    --surface:#FFFFFF;
+    --surface-2:#E7EBF2;
+    --ink:#0B1220;
+    --ink-2:#3C4759;
+    --muted:#6B7686;
+    --line:#DBE1EA;
+    --line-soft:#E9ECF2;
+    --accent:#FF5A29;
+    --accent-ink:#FFFFFF;
+    --accent-2:#0E9C93;
+    --ok:#17A34A;
+    --glow:rgba(255,90,41,.30);
+    --glow-2:rgba(14,156,147,.22);
+    --display:"Bricolage Grotesque","Archivo","Helvetica Neue",Arial,sans-serif;
+    --body:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif;
     --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Consolas,monospace;
+    --shadow:0 1px 2px rgba(11,18,32,.04),0 12px 32px -16px rgba(11,18,32,.18);
+    --shadow-lg:0 24px 60px -24px rgba(11,18,32,.28);
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --bg:#0A1618;
-      --surface:#0F2124;
-      --ink:#E6EEEF;
-      --ink-2:#BACACD;
-      --muted:#8CA3A7;
-      --line:#22383C;
-      --line-soft:#1A2E31;
-      --accent:#E8783E;
-      --petrol:#4FB3BE;
-      --slate:#5D7679;
-      --ok:#5FBF8E;
-      --focus:#4FB3BE;
+      --bg:#080B10;
+      --surface:#111621;
+      --surface-2:#161D2B;
+      --ink:#EEF1F6;
+      --ink-2:#B6C0CE;
+      --muted:#79879A;
+      --line:#212A3A;
+      --line-soft:#1A2231;
+      --accent:#FF7A47;
+      --accent-ink:#0B0E14;
+      --accent-2:#2DD4C5;
+      --ok:#34D399;
+      --glow:rgba(255,122,71,.28);
+      --glow-2:rgba(45,212,197,.20);
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px -16px rgba(0,0,0,.55);
+      --shadow-lg:0 24px 70px -20px rgba(0,0,0,.65);
     }
   }
   :root[data-theme="dark"]{
-    --bg:#0A1618;
-    --surface:#0F2124;
-    --ink:#E6EEEF;
-    --ink-2:#BACACD;
-    --muted:#8CA3A7;
-    --line:#22383C;
-    --line-soft:#1A2E31;
-    --accent:#E8783E;
-    --petrol:#4FB3BE;
-    --slate:#5D7679;
-    --ok:#5FBF8E;
-    --focus:#4FB3BE;
+    --bg:#080B10;
+    --surface:#111621;
+    --surface-2:#161D2B;
+    --ink:#EEF1F6;
+    --ink-2:#B6C0CE;
+    --muted:#79879A;
+    --line:#212A3A;
+    --line-soft:#1A2231;
+    --accent:#FF7A47;
+    --accent-ink:#0B0E14;
+    --accent-2:#2DD4C5;
+    --ok:#34D399;
+    --glow:rgba(255,122,71,.28);
+    --glow-2:rgba(45,212,197,.20);
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px -16px rgba(0,0,0,.55);
+    --shadow-lg:0 24px 70px -20px rgba(0,0,0,.65);
   }
 
   *{box-sizing:border-box}
-  html{background:var(--bg)}
+  html{background:var(--bg);scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
   body{
+    margin:0;
     background:var(--bg);
     color:var(--ink);
     font-family:var(--body);
-    font-size:17px;
+    font-size:16.5px;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
-    margin:0;
+    overflow-x:hidden;
   }
   a{color:inherit}
-  :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+  img,svg{display:block}
+  :focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:3px}
+  ::selection{background:var(--glow);color:var(--ink)}
 
-  .shell{
-    max-width:1180px;
-    margin:0 auto;
-    padding:clamp(24px,4vw,56px) clamp(20px,4vw,48px) 0;
-    display:grid;
-    grid-template-columns:250px minmax(0,1fr);
-    gap:clamp(32px,5vw,72px);
-    align-items:start;
+  .wrap{max-width:1140px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+
+  /* ---------------- topbar ---------------- */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;z-index:40;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px clamp(20px,4vw,40px);
+    background:color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--line-soft);
   }
-
-  /* ---------- rail ---------- */
-  .rail{position:sticky;top:clamp(24px,4vw,56px);display:flex;flex-direction:column;gap:26px}
-  .mark{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  .pulse{width:9px;height:9px;border-radius:50%;background:var(--ok);animation:beat 2.6s ease-out infinite;flex:none}
-  @keyframes beat{0%{box-shadow:0 0 0 0 rgba(47,122,87,.45)}70%{box-shadow:0 0 0 8px rgba(47,122,87,0)}100%{box-shadow:0 0 0 0 rgba(47,122,87,0)}}
-  @media (prefers-reduced-motion:reduce){.pulse{animation:none}}
-
-  .name{font-family:var(--display);font-weight:700;font-size:29px;line-height:1.05;letter-spacing:-.022em;margin:0;text-wrap:balance}
-  .role{font-family:var(--display);font-weight:500;font-size:14.5px;line-height:1.35;color:var(--accent);margin:8px 0 0;letter-spacing:-.005em}
-  .kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;color:var(--muted);margin:9px 0 0;text-transform:uppercase}
-
-  .nav{display:flex;flex-direction:column;border-top:1px solid var(--line);padding-top:14px}
-  .nav a{
-    font-family:var(--display);font-size:13px;font-weight:500;
-    text-decoration:none;color:var(--ink-2);padding:5px 0;display:flex;gap:10px;align-items:baseline;
-    transition:color .18s ease;
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand .badge{
+    width:34px;height:34px;border-radius:10px;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    color:#0B0E14;font-family:var(--display);font-weight:800;font-size:14px;letter-spacing:-.02em;
+    box-shadow:0 6px 18px -6px var(--glow);
   }
-  .nav a i{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--slate)}
-  .nav a:hover{color:var(--accent)}
+  .brand .bt{font-family:var(--display);font-weight:700;font-size:14.5px;letter-spacing:-.01em;color:var(--ink)}
+  .brand .bt small{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.06em;color:var(--muted);margin-top:1px}
 
-  .rail-contact{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);padding-top:14px}
-  .rail-contact a{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-soft);padding:0 0 7px;margin-bottom:7px;word-break:break-all;transition:color .18s ease,border-color .18s ease}
-  .rail-contact a:hover{color:var(--accent);border-color:var(--accent)}
-  .rail-contact span{font-family:var(--mono);font-size:11.5px;color:var(--slate)}
-
-  .lang{display:flex;border:1px solid var(--line);width:max-content;border-radius:2px;overflow:hidden}
-  .lang button{
-    font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;padding:6px 11px;border:0;cursor:pointer;
-    background:transparent;color:var(--muted);transition:background .18s ease,color .18s ease;
+  .topnav{display:flex;align-items:center;gap:26px}
+  .topnav a{
+    font-family:var(--body);font-size:13.5px;font-weight:600;color:var(--ink-2);text-decoration:none;position:relative;padding:4px 0;
   }
+  .topnav a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--accent);border-radius:2px;transition:right .22s cubic-bezier(.4,0,.2,1)}
+  .topnav a:hover{color:var(--ink)}
+  .topnav a:hover::after{right:0}
+  @media (max-width:840px){ .topnav-links{display:none} }
+
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+  .lang button{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;padding:6px 13px;border:0;cursor:pointer;background:transparent;color:var(--muted);transition:background .18s ease,color .18s ease}
   .lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+  .topbar-right{display:flex;align-items:center;gap:16px}
 
-  /* ---------- main ---------- */
-  main{display:flex;flex-direction:column;gap:clamp(48px,6vw,80px);padding-bottom:96px;min-width:0}
-  section{scroll-margin-top:32px}
-  .eyebrow{
-    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-    display:flex;align-items:center;gap:12px;margin:0 0 20px;max-width:none;
+  /* ---------------- hero ---------------- */
+  .hero{position:relative;padding:calc(96px + 4vw) 0 76px;overflow:hidden}
+  .hero-glow{
+    position:absolute;inset:-20% -10% auto -10%;height:720px;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(480px 360px at 18% 20%, var(--glow), transparent 70%),
+      radial-gradient(560px 420px at 82% 10%, var(--glow-2), transparent 70%);
+    filter:blur(10px);
+    animation:drift 26s ease-in-out infinite alternate;
   }
-  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
-  h2{font-family:var(--display);font-weight:600;font-size:clamp(21px,2.4vw,25px);letter-spacing:-.02em;margin:0 0 16px;text-wrap:balance}
+  @keyframes drift{
+    0%{ transform:translate3d(0,0,0) scale(1) }
+    100%{ transform:translate3d(2%, 3%, 0) scale(1.06) }
+  }
+  @media (prefers-reduced-motion:reduce){ .hero-glow{ animation:none } }
 
-  .lead{font-size:clamp(19px,2.1vw,22px);line-height:1.5;max-width:62ch;margin:0;color:var(--ink)}
-  .lead b{font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums}
-  p{max-width:64ch}
+  .badge-pill{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-2);
+    background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 10px;
+    box-shadow:var(--shadow);
+  }
+  .pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);position:relative;flex:none}
+  .pulse::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1.5px solid var(--ok);animation:ring 2.4s ease-out infinite}
+  @media (prefers-reduced-motion:reduce){ .pulse::after{animation:none} }
+  @keyframes ring{0%{transform:scale(.5);opacity:.9}100%{transform:scale(1.9);opacity:0}}
 
-  /* impact */
-  .impact{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .stat{background:var(--bg);padding:18px 16px 20px;display:flex;flex-direction:column;gap:6px}
-  .stat .fig{font-family:var(--display);font-weight:700;font-size:clamp(27px,3.4vw,33px);letter-spacing:-.035em;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink)}
-  .stat .fig em{font-style:normal;color:var(--accent)}
-  .stat .cap{font-family:var(--mono);font-size:10.5px;line-height:1.5;color:var(--muted)}
+  .hero h1{
+    font-family:var(--display);font-weight:800;letter-spacing:-.04em;line-height:.98;
+    font-size:clamp(44px,8vw,84px);margin:22px 0 0;text-wrap:balance;
+  }
+  .hero h1 .accent{
+    background:linear-gradient(100deg,var(--accent),var(--accent-2) 78%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .role{
+    font-family:var(--display);font-weight:600;font-size:clamp(18px,2.4vw,24px);letter-spacing:-.01em;
+    color:var(--ink-2);margin:16px 0 0;
+  }
+  .hero .lead{font-size:17.5px;color:var(--ink-2);max-width:56ch;margin:20px 0 0;line-height:1.65}
+  .hero .lead b{color:var(--ink);font-weight:700}
+
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .btn{
+    font-family:var(--body);font-weight:700;font-size:14px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;
+    transition:transform .16s cubic-bezier(.4,0,.2,1),box-shadow .16s ease,background .16s ease,border-color .16s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--ink);color:var(--bg);box-shadow:var(--shadow)}
+  .btn-primary:hover{box-shadow:var(--shadow-lg)}
+  .btn-ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--accent-2)}
+
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin-top:52px;max-width:640px;
+  }
+  .hstat{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;
+    box-shadow:var(--shadow);
+  }
+  .hstat .n{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
+  .hstat .n em{font-style:normal;color:var(--accent)}
+  .hstat .l{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.03em;margin-top:4px;line-height:1.4}
+
+  /* ---------------- sections ---------------- */
+  main{padding-bottom:100px}
+  section{padding:88px 0;scroll-margin-top:88px;border-top:1px solid var(--line-soft)}
+  section:first-of-type{border-top:0}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 14px;
+  }
+  .eyebrow::before{content:"";width:18px;height:1.5px;background:var(--accent);border-radius:2px}
+  h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,40px);letter-spacing:-.03em;margin:0 0 14px;text-wrap:balance}
+  .section-sub{color:var(--muted);font-size:15.5px;max-width:56ch;margin:0 0 40px}
+
+  [data-reveal]{opacity:1;transform:none}
+  .reveal-armed [data-reveal]{transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+  .reveal-armed [data-reveal]:not(.is-visible){opacity:0;transform:translateY(22px)}
+
+  /* impact grid */
+  .impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;
+    box-shadow:var(--shadow);position:relative;overflow:hidden;
+    transition:transform .2s cubic-bezier(.4,0,.2,1),box-shadow .2s ease,border-color .2s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--accent-2)}
+  .card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    opacity:0;transition:opacity .2s ease;
+  }
+  .card:hover::before{opacity:1}
+  .card .fig{font-family:var(--display);font-weight:800;font-size:clamp(30px,3.6vw,38px);letter-spacing:-.03em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+  .card .fig em{font-style:normal;color:var(--accent)}
+  .card .cap{font-family:var(--mono);font-size:11px;line-height:1.55;color:var(--muted);margin-top:10px}
 
   /* timeline */
-  .tl-wrap{overflow-x:auto;padding-bottom:6px}
-  .tl{min-width:580px;display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 14px;align-items:center}
-  .tl-lane{font-family:var(--display);font-size:12px;font-weight:500;color:var(--ink-2);text-align:right;padding:4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .tl-track{position:relative;height:20px}
-  .tl-track::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:var(--line-soft)}
-  .bar{position:absolute;top:5px;height:10px;border-radius:1px;background:var(--slate)}
-  .bar.t-lead{background:var(--accent)}
-  .bar.t-mid{background:var(--petrol)}
-  .bar.t-jr{background:var(--slate)}
-  .bar[data-now]::after{content:"";position:absolute;right:-1px;top:-5px;width:2px;height:20px;background:var(--accent)}
-  .tl-axis{grid-column:2;display:flex;margin-top:6px;border-top:1px solid var(--line)}
-  .tl-axis span{flex:1;font-family:var(--mono);font-size:9.5px;color:var(--slate);padding:5px 0 0 3px;border-left:1px solid var(--line-soft)}
+  .tl-wrap{overflow-x:auto;padding-bottom:6px;margin-bottom:44px}
+  .tl{min-width:600px;display:grid;grid-template-columns:126px minmax(0,1fr);gap:0 14px;align-items:center}
+  .tl-lane{font-family:var(--display);font-size:12.5px;font-weight:700;color:var(--ink-2);text-align:right;padding:5px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tl-track{position:relative;height:22px}
+  .tl-track::before{content:"";position:absolute;left:0;right:0;top:10px;height:2px;background:var(--line);border-radius:2px}
+  .bar{position:absolute;top:6px;height:10px;border-radius:6px;background:var(--muted);box-shadow:var(--shadow)}
+  .bar.t-lead{background:linear-gradient(90deg,var(--accent),#ffb08a)}
+  .bar.t-mid{background:var(--accent-2)}
+  .bar.t-jr{background:var(--muted);opacity:.75}
+  .bar[data-now]{box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent),var(--shadow)}
+  .bar[data-now]::after{content:"";position:absolute;right:-2px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent)}
+  .tl-axis{grid-column:2;display:flex;margin-top:8px;border-top:1px solid var(--line)}
+  .tl-axis span{flex:1;font-family:var(--mono);font-size:9.5px;color:var(--muted);padding:6px 0 0 3px;border-left:1px solid var(--line-soft)}
   .tl-axis span:first-child{border-left:0;padding-left:0}
-  .tl-key{display:flex;flex-wrap:wrap;gap:6px 20px;margin:14px 0 0;max-width:none;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
-  .tl-key i{display:inline-block;width:16px;height:6px;border-radius:1px;margin-right:7px;vertical-align:middle}
+  .tl-key{display:flex;flex-wrap:wrap;gap:8px 22px;margin:16px 0 0;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+  .tl-key i{display:inline-block;width:16px;height:7px;border-radius:4px;margin-right:7px;vertical-align:middle}
 
-  /* roles */
-  .roles{display:flex;flex-direction:column;gap:34px;margin-top:44px}
-  .role-item{display:grid;grid-template-columns:136px minmax(0,1fr);gap:8px 22px}
-  .role-when{font-family:var(--mono);font-size:11px;line-height:1.6;color:var(--muted);padding-top:4px;max-width:none}
-  .role-when b{display:block;color:var(--ink-2);font-weight:500}
-  .role-head h3{font-family:var(--display);font-size:18px;font-weight:600;letter-spacing:-.015em;margin:0;line-height:1.25}
-  .role-head .co{font-family:var(--display);font-size:13px;font-weight:500;color:var(--accent);margin:3px 0 0}
-  ul.pts{list-style:none;padding:0;margin:13px 0 0;display:flex;flex-direction:column;gap:9px;max-width:66ch}
-  ul.pts li{position:relative;padding-left:19px;font-size:15.5px;line-height:1.55;color:var(--ink-2)}
-  ul.pts li::before{content:"";position:absolute;left:0;top:.68em;width:9px;height:1px;background:var(--accent)}
-  ul.pts li b{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+  .roles{display:flex;flex-direction:column;gap:0}
+  .role-item{
+    position:relative;padding:28px 0 28px 30px;border-left:2px solid var(--line);
+  }
+  .role-item:last-child{padding-bottom:0}
+  .role-item::before{
+    content:"";position:absolute;left:-7px;top:33px;width:12px;height:12px;border-radius:50%;
+    background:var(--surface);border:2.5px solid var(--accent-2);
+  }
+  .role-item.current::before{border-color:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb, var(--accent) 18%, transparent)}
+  .role-when{display:flex;align-items:baseline;gap:10px;font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:8px;flex-wrap:wrap}
+  .role-when b{font-weight:600;color:var(--ink-2)}
+  .role-when .tag{background:var(--surface-2);border-radius:999px;padding:2px 9px;font-size:10px}
+  .role-head h3{font-family:var(--display);font-size:19px;font-weight:700;letter-spacing:-.015em;margin:0;line-height:1.25}
+  .role-head .co{font-family:var(--body);font-size:13.5px;font-weight:700;color:var(--accent);margin:3px 0 0}
+  ul.pts{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-direction:column;gap:9px;max-width:64ch}
+  ul.pts li{position:relative;padding-left:19px;font-size:15px;line-height:1.6;color:var(--ink-2)}
+  ul.pts li::before{content:"";position:absolute;left:0;top:.7em;width:9px;height:2px;border-radius:2px;background:var(--accent-2)}
+  ul.pts li b{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
 
-  .early{border-top:1px solid var(--line);margin-top:8px;padding-top:20px}
-  .early h3{font-family:var(--display);font-size:15px;font-weight:600;margin:0}
-  .early ul{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0 30px}
-  .early li{font-size:14.5px;color:var(--ink-2);display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line-soft);padding:8px 0}
-  .early li em{font-style:normal}
-  .early li span{font-family:var(--mono);font-size:10.5px;color:var(--muted);white-space:nowrap;padding-top:3px}
+  .early{margin-top:8px;padding:26px 24px;background:var(--surface-2);border-radius:16px}
+  .early h3{font-family:var(--display);font-size:14.5px;font-weight:700;margin:0 0 14px;color:var(--ink-2)}
+  .early ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 28px}
+  .early li{font-size:14px;color:var(--ink-2);display:flex;justify-content:space-between;gap:14px;padding:8px 0;border-bottom:1px solid var(--line)}
+  .early li span{font-family:var(--mono);font-size:10.5px;color:var(--muted);white-space:nowrap;padding-top:2px}
 
   /* skills */
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:30px 34px}
-  .sk h3{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:0 0 13px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-  .sk ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
-  .sk li{font-size:15px;line-height:1.35;color:var(--ink)}
-  .sk li i{display:block;font-style:normal;font-family:var(--mono);font-size:10.5px;line-height:1.45;color:var(--muted);margin-top:3px}
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .sk{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .sk h3{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:0 0 15px}
+  .sk .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .sk .chip{
+    font-family:var(--body);font-size:13px;font-weight:600;color:var(--ink);
+    background:var(--surface-2);border:1px solid var(--line);border-radius:9px;padding:7px 12px;
+  }
+  .sk .chip small{display:block;font-family:var(--mono);font-weight:400;font-size:10px;color:var(--muted);margin-top:2px}
 
-  /* facts */
-  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px 36px}
-  .fact h3{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:0 0 13px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-  .fact .deg{font-family:var(--display);font-size:16.5px;font-weight:600;letter-spacing:-.01em;margin:0;line-height:1.3}
-  .fact .inst{font-size:14.5px;color:var(--ink-2);margin:5px 0 0}
-  .fact .yr{font-family:var(--mono);font-size:11px;color:var(--muted);margin:7px 0 0}
-  .langbar{display:flex;flex-direction:column;gap:12px;margin:0;padding:0;list-style:none}
-  .langbar li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:15px;border-bottom:1px solid var(--line-soft);padding-bottom:10px}
+  .strengths{display:flex;flex-wrap:wrap;gap:9px;margin:34px 0 0;padding:0;list-style:none}
+  .strengths li{
+    font-family:var(--mono);font-size:11px;color:var(--ink-2);border:1px dashed var(--line);padding:7px 13px;border-radius:999px;
+  }
+
+  /* education */
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .fact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+  .fact h3{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:0 0 14px}
+  .fact .deg{font-family:var(--display);font-size:18px;font-weight:700;letter-spacing:-.01em;margin:0;line-height:1.3}
+  .fact .inst{font-size:14.5px;color:var(--ink-2);margin:6px 0 0}
+  .fact .yr{font-family:var(--mono);font-size:11px;color:var(--muted);margin:8px 0 0}
+  .langbar{display:flex;flex-direction:column;gap:14px;margin:0;padding:0;list-style:none}
+  .langbar li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:15px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .langbar li:last-child{padding-bottom:0;border-bottom:0}
   .langbar em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--muted);text-align:right}
 
-  .strengths{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 0;padding:0;list-style:none}
-  .strengths li{font-family:var(--mono);font-size:11px;color:var(--ink-2);border:1px solid var(--line);padding:6px 11px;border-radius:2px;background:var(--surface)}
-
   /* contact */
-  .cta{border-top:2px solid var(--ink);padding-top:26px;display:flex;flex-wrap:wrap;gap:26px 44px;align-items:flex-end;justify-content:space-between}
-  .cta h2{margin:0 0 8px;max-width:20ch}
-  .cta p{margin:0;color:var(--muted);font-size:15.5px;max-width:44ch}
-  .cta-links{display:flex;flex-wrap:wrap;gap:10px}
-  .cta-links a{
-    font-family:var(--display);font-weight:600;font-size:13.5px;text-decoration:none;
-    padding:11px 20px;border:1px solid var(--ink);color:var(--ink);border-radius:2px;transition:background .18s ease,color .18s ease,border-color .18s ease;
+  .cta-block{
+    position:relative;background:linear-gradient(160deg,var(--ink),#1a2130);color:var(--bg);
+    border-radius:26px;padding:clamp(36px,5vw,64px);overflow:hidden;
   }
-  .cta-links a.primary{background:var(--ink);color:var(--bg)}
-  .cta-links a:hover{background:var(--accent);border-color:var(--accent);color:#FFF8F4}
+  .cta-block::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(420px 260px at 85% 0%, color-mix(in srgb, var(--accent) 55%, transparent), transparent 70%);
+    pointer-events:none;
+  }
+  .cta-block *{position:relative}
+  .cta-block .eyebrow{color:var(--accent)}
+  .cta-block h2{color:#F5F7FA;max-width:16ch}
+  .cta-block p{color:#B9C2CF;font-size:15.5px;max-width:44ch;margin:0 0 30px}
+  .cta-links{display:flex;flex-wrap:wrap;gap:12px}
+  .cta-links a{
+    font-family:var(--body);font-weight:700;font-size:14px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;transition:transform .16s ease,background .16s ease;
+  }
+  .cta-links a.primary{background:linear-gradient(100deg,var(--accent),#ffb08a);color:#0B0E14}
+  .cta-links a.primary:hover{transform:translateY(-2px)}
+  .cta-links a.ghost{border:1px solid rgba(255,255,255,.22);color:#F5F7FA}
+  .cta-links a.ghost:hover{background:rgba(255,255,255,.08)}
 
-  footer{font-family:var(--mono);font-size:10.5px;color:var(--slate);letter-spacing:.03em;margin-top:38px;display:flex;flex-wrap:wrap;gap:6px 18px}
+  footer{
+    font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.03em;margin-top:44px;
+    display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;
+  }
 
-  @media (max-width:860px){
-    .shell{grid-template-columns:1fr;gap:38px}
-    .rail{position:static}
-    .nav{display:none}
-    .role-item{grid-template-columns:1fr;gap:6px}
-    .role-when{padding-top:0;display:flex;gap:10px}
-    .role-when b{display:inline}
+  @media (max-width:640px){
+    .role-item{padding-left:22px}
+    section{padding:64px 0}
   }
 </style>
 </head>
 <body>
 
-<div class="shell">
-  <aside class="rail">
-    <p class="mark"><i class="pulse" aria-hidden="true"></i><span data-en="open to opportunities">disponível para propostas</span></p>
-    <div>
-      <h1 class="name">Ramon<br>Machado Blasius</h1>
-      <p class="role" data-en="Senior Infrastructure Engineer">Engenheiro de Infraestrutura Sênior</p>
-      <p class="kicker" data-en="Cloud · Automation · Observability">Cloud · Automação · Observabilidade</p>
+<nav class="topbar">
+  <a class="brand" href="#top">
+    <span class="badge">RM</span>
+    <span class="bt">Ramon Machado<small data-en="Infrastructure Engineer">Eng. de Infraestrutura</small></span>
+  </a>
+  <div class="topnav">
+    <div class="topnav-links">
+      <a href="#perfil" data-en="Profile">Perfil</a>
+      <a href="#impacto" data-en="Impact">Impacto</a>
+      <a href="#trajetoria" data-en="Career">Trajetória</a>
+      <a href="#competencias" data-en="Skills">Competências</a>
+      <a href="#contato" data-en="Contact">Contato</a>
     </div>
-
-    <nav class="nav" aria-label="Seções">
-      <a href="#perfil"><i>01</i><span data-en="Profile">Perfil</span></a>
-      <a href="#impacto"><i>02</i><span data-en="Impact">Impacto</span></a>
-      <a href="#trajetoria"><i>03</i><span data-en="Career">Trajetória</span></a>
-      <a href="#competencias"><i>04</i><span data-en="Skills">Competências</span></a>
-      <a href="#formacao"><i>05</i><span data-en="Education">Formação</span></a>
-      <a href="#contato"><i>06</i><span data-en="Contact">Contato</span></a>
-    </nav>
-
-    <div class="rail-contact">
-      <a href="mailto:raamon.machado030@gmail.com">raamon.machado030@gmail.com</a>
-      <a href="https://linkedin.com/in/ramonmachado-blasius" target="_blank" rel="noopener">linkedin.com/in/ramonmachado-blasius</a>
-      <span>Brasil</span>
-    </div>
-
+  </div>
+  <div class="topbar-right">
     <div class="lang" role="group" aria-label="Idioma / Language">
       <button type="button" id="btn-pt" aria-pressed="true">PT-BR</button>
       <button type="button" id="btn-en" aria-pressed="false">EN</button>
     </div>
-  </aside>
+  </div>
+</nav>
 
-  <main>
-    <section id="perfil">
-      <p class="eyebrow"><span data-en="01 — Profile">01 — Perfil</span></p>
-      <p class="lead" data-en="Infrastructure engineer with <b>8+ years</b> keeping mission-critical environments observable, automated and quiet. Specialist in Zabbix, Grafana and Python, with solid ground in Azure, OCI and Active Directory — turning noisy infrastructure into dashboards people actually act on.">Engenheiro de infraestrutura com <b>8+ anos</b> mantendo ambientes de missão crítica observáveis, automatizados e silenciosos. Especialista em Zabbix, Grafana e Python, com base sólida em Azure, OCI e Active Directory — transformando infraestrutura ruidosa em painéis sobre os quais alguém realmente age.</p>
-      <p style="margin-top:22px;color:var(--ink-2);font-size:16px" data-en="Track record in observability that lifted operational efficiency by 40%, automation that cut manual work from 40h to 8h a month, and 2nd/3rd level technical support for multinational clients. Collaborative, results-driven, with continuous process improvement as the default setting.">Histórico comprovado em observabilidade que elevou a eficiência operacional em 40%, automação que reduziu o trabalho manual de 40h para 8h por mês e suporte técnico de 2º e 3º nível para clientes multinacionais. Perfil colaborativo, orientado a resultados e com melhoria contínua de processos como padrão.</p>
-    </section>
+<main id="top">
+  <header class="hero wrap">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <span class="badge-pill"><i class="pulse" aria-hidden="true"></i><span data-en="Open to new opportunities">Disponível para novas oportunidades</span></span>
 
-    <section id="impacto">
-      <p class="eyebrow"><span data-en="02 — Measured impact">02 — Impacto medido</span></p>
-      <div class="impact">
-        <div class="stat"><span class="fig">99,5<em>%</em></span><span class="cap" data-en="uptime in mission-critical environments">uptime em ambientes de missão crítica</span></div>
-        <div class="stat"><span class="fig">50<em>+</em></span><span class="cap" data-en="clients on monitoring infrastructure">clientes em infraestrutura de monitoramento</span></div>
-        <div class="stat"><span class="fig">200<em>+</em></span><span class="cap" data-en="metrics monitored per client">métricas monitoradas por cliente</span></div>
-        <div class="stat"><span class="fig"><em>−</em>25<em>%</em></span><span class="cap" data-en="MTTR after Grafana dashboards">MTTR após dashboards Grafana</span></div>
-        <div class="stat"><span class="fig">40<em>→</em>8<em>h</em></span><span class="cap" data-en="manual work per month, after automation">trabalho manual por mês, após automação</span></div>
-        <div class="stat"><span class="fig">80<em>%</em></span><span class="cap" data-en="of user provisioning automated in Python">do provisionamento de usuários automatizado em Python</span></div>
-      </div>
-    </section>
+    <h1>Ramon Machado<br><span class="accent">Blasius</span></h1>
+    <p class="role" data-en="Senior Infrastructure Engineer · Cloud · Automation · Observability">Engenheiro de Infraestrutura Sênior · Cloud · Automação · Observabilidade</p>
+    <p class="lead" data-en="I keep mission-critical environments observable, automated and quiet. <b>8+ years</b> specializing in Zabbix, Grafana and Python — turning noisy infrastructure into dashboards people actually act on.">Mantenho ambientes de missão crítica observáveis, automatizados e silenciosos. <b>8+ anos</b> especializado em Zabbix, Grafana e Python — transformando infraestrutura ruidosa em painéis sobre os quais alguém realmente age.</p>
 
-    <section id="trajetoria">
-      <p class="eyebrow"><span data-en="03 — Career, to scale">03 — Trajetória, em escala real</span></p>
-      <h2 data-en="Twelve years on one axis">Doze anos no mesmo eixo</h2>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="mailto:raamon.machado030@gmail.com" data-en="Send an email">Enviar e-mail</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/ramonmachado-blasius" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
 
-      <div class="tl-wrap">
-        <div class="tl">
-          <div class="tl-lane">Benner</div>
-          <div class="tl-track"><div class="bar t-lead" data-now style="left:68.59%;width:28.85%"></div></div>
-          <div class="tl-lane">TEC+</div>
-          <div class="tl-track"><div class="bar t-mid" style="left:63.46%;width:4.49%"></div></div>
-          <div class="tl-lane">IP5 Tecnologia</div>
-          <div class="tl-track"><div class="bar t-mid" style="left:36.54%;width:26.92%"></div></div>
-          <div class="tl-lane">Microservice</div>
-          <div class="tl-track"><div class="bar t-jr" style="left:28.85%;width:2.56%"></div></div>
-          <div class="tl-lane">Datainfo</div>
-          <div class="tl-track"><div class="bar t-jr" style="left:21.79%;width:6.41%"></div></div>
-          <div class="tl-lane">Mult Sistemas</div>
-          <div class="tl-track"><div class="bar t-jr" style="left:8.97%;width:12.18%"></div></div>
-          <div class="tl-lane">Takai Veículos</div>
-          <div class="tl-track"><div class="bar t-jr" style="left:0.64%;width:8.33%"></div></div>
-          <div class="tl-axis" aria-hidden="true">
-            <span>2014</span><span>2015</span><span>2016</span><span>2017</span><span>2018</span><span>2019</span><span>2020</span><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
-          </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="n">99,5<em>%</em></div><div class="l" data-en="uptime, mission-critical">uptime, missão crítica</div></div>
+      <div class="hstat"><div class="n">50<em>+</em></div><div class="l" data-en="clients monitored">clientes monitorados</div></div>
+      <div class="hstat"><div class="n">8<em>+</em></div><div class="l" data-en="years in infrastructure">anos em infraestrutura</div></div>
+      <div class="hstat"><div class="n"><em>−</em>25<em>%</em></div><div class="l">MTTR</div></div>
+    </div>
+  </header>
+
+  <section id="perfil" class="wrap">
+    <p class="eyebrow" data-en="Profile">Perfil</p>
+    <h2 data-reveal data-en="Infraestrutura que não te acorda às 3 da manhã.">Infraestrutura que não te acorda às 3 da manhã.</h2>
+    <p class="section-sub" data-reveal data-en="Specialist in Zabbix, Grafana and Python, with solid ground in Azure, OCI and Active Directory. Track record of observability solutions that lifted operational efficiency by 40%, automation that cut manual work from 40h to 8h a month, and 2nd/3rd level technical support for multinational clients.">Especialista em Zabbix, Grafana e Python, com base sólida em Azure, OCI e Active Directory. Histórico de soluções de observabilidade que elevaram a eficiência operacional em 40%, automação que reduziu o trabalho manual de 40h para 8h por mês e suporte técnico de 2º e 3º nível para clientes multinacionais.</p>
+  </section>
+
+  <section id="impacto" class="wrap">
+    <p class="eyebrow" data-en="Measured impact">Impacto medido</p>
+    <h2 data-reveal data-en="Números, não adjetivos.">Números, não adjetivos.</h2>
+    <p class="section-sub" data-reveal data-en="What changed after I got involved.">O que mudou depois que entrei.</p>
+    <div class="impact-grid">
+      <div class="card" data-reveal><div class="fig">99,5<em>%</em></div><div class="cap" data-en="uptime across mission-critical environments">uptime em ambientes de missão crítica</div></div>
+      <div class="card" data-reveal><div class="fig">50<em>+</em></div><div class="cap" data-en="clients on monitoring infrastructure">clientes em infraestrutura de monitoramento</div></div>
+      <div class="card" data-reveal><div class="fig">200<em>+</em></div><div class="cap" data-en="metrics monitored per client">métricas monitoradas por cliente</div></div>
+      <div class="card" data-reveal><div class="fig"><em>−</em>25<em>%</em></div><div class="cap" data-en="MTTR after Grafana dashboards">MTTR após dashboards Grafana</div></div>
+      <div class="card" data-reveal><div class="fig">40<em>→</em>8<em>h</em></div><div class="cap" data-en="manual work per month, after automation">trabalho manual por mês, após automação</div></div>
+      <div class="card" data-reveal><div class="fig">80<em>%</em></div><div class="cap" data-en="of user provisioning automated in Python">provisionamento de usuários automatizado em Python</div></div>
+    </div>
+  </section>
+
+  <section id="trajetoria" class="wrap">
+    <p class="eyebrow" data-en="Career, to scale">Trajetória, em escala real</p>
+    <h2 data-reveal data-en="Doze anos no mesmo eixo.">Doze anos no mesmo eixo.</h2>
+    <p class="section-sub" data-reveal data-en="Bar length maps to real tenure, 2014 to now.">O comprimento das barras é proporcional ao tempo real, de 2014 até hoje.</p>
+
+    <div class="tl-wrap" data-reveal>
+      <div class="tl">
+        <div class="tl-lane">Benner</div>
+        <div class="tl-track"><div class="bar t-lead" data-now style="left:68.59%;width:28.85%"></div></div>
+        <div class="tl-lane">TEC+</div>
+        <div class="tl-track"><div class="bar t-mid" style="left:63.46%;width:4.49%"></div></div>
+        <div class="tl-lane">IP5 Tecnologia</div>
+        <div class="tl-track"><div class="bar t-mid" style="left:36.54%;width:26.92%"></div></div>
+        <div class="tl-lane">Microservice</div>
+        <div class="tl-track"><div class="bar t-jr" style="left:28.85%;width:2.56%"></div></div>
+        <div class="tl-lane">Datainfo</div>
+        <div class="tl-track"><div class="bar t-jr" style="left:21.79%;width:6.41%"></div></div>
+        <div class="tl-lane">Mult Sistemas</div>
+        <div class="tl-track"><div class="bar t-jr" style="left:8.97%;width:12.18%"></div></div>
+        <div class="tl-lane">Takai Veículos</div>
+        <div class="tl-track"><div class="bar t-jr" style="left:0.64%;width:8.33%"></div></div>
+        <div class="tl-axis" aria-hidden="true">
+          <span>2014</span><span>2015</span><span>2016</span><span>2017</span><span>2018</span><span>2019</span><span>2020</span><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
         </div>
       </div>
-      <p class="tl-key">
-        <span><i style="background:var(--accent)"></i><em style="font-style:normal" data-en="Senior engineering">Engenharia sênior</em></span>
-        <span><i style="background:var(--petrol)"></i><em style="font-style:normal" data-en="Analyst">Analista</em></span>
-        <span><i style="background:var(--slate)"></i><em style="font-style:normal" data-en="Technician">Técnico</em></span>
-      </p>
+    </div>
+    <p class="tl-key" data-reveal>
+      <span><i style="background:linear-gradient(90deg,var(--accent),#ffb08a)"></i><em style="font-style:normal" data-en="Senior engineering">Engenharia sênior</em></span>
+      <span><i style="background:var(--accent-2)"></i><em style="font-style:normal" data-en="Analyst">Analista</em></span>
+      <span><i style="background:var(--muted);opacity:.75"></i><em style="font-style:normal" data-en="Technician">Técnico</em></span>
+    </p>
 
-      <div class="roles">
-        <article class="role-item">
-          <p class="role-when"><b data-en="Dec 2022 — present">Dez 2022 — presente</b><span data-en="3+ years">3+ anos</span></p>
-          <div class="role-head">
-            <h3 data-en="Senior Infrastructure Engineer">Engenheiro de Infraestrutura Sênior</h3>
-            <p class="co">Benner</p>
-            <ul class="pts">
-              <li data-en="Deployed and maintained Zabbix infrastructure for <b>50+ clients</b>, holding <b>99.5%</b> uptime in mission-critical environments.">Implantação e manutenção de infraestrutura Zabbix para <b>50+ clientes</b>, sustentando <b>99,5%</b> de uptime em ambientes de missão crítica.</li>
-              <li data-en="Automated <b>80%</b> of user provisioning with Python scripts, cutting manual work from <b>40h</b> to <b>8h</b> per month.">Automação de <b>80%</b> dos processos de provisionamento de usuários via scripts Python, reduzindo o trabalho manual de <b>40h</b> para <b>8h</b> por mês.</li>
-              <li data-en="Built custom templates (infrastructure, system, applications) covering <b>200+</b> monitored metrics per client.">Criação de templates customizados (infraestrutura, sistema, aplicações) com <b>200+</b> métricas monitoradas por cliente.</li>
-              <li data-en="Developed Grafana dashboards for real-time performance visibility, reducing MTTR by <b>25%</b>.">Desenvolvimento de dashboards Grafana para visualização de performance em tempo real, reduzindo o MTTR em <b>25%</b>.</li>
-              <li data-en="Ran strategic technical support and cloud demand management (Azure / OCI) for critical accounts.">Suporte técnico estratégico e gestão de demandas cloud (Azure / OCI) para clientes críticos.</li>
-              <li data-en="Implemented Active Directory automation: user deprovisioning, access grants and automated notifications.">Implementação de automação no Active Directory: inativação de usuários, concessão de acessos e envio automatizado de e-mails.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="role-item">
-          <p class="role-when"><b data-en="Apr — Nov 2022">Abr — Nov 2022</b><span data-en="8 months">8 meses</span></p>
-          <div class="role-head">
-            <h3 data-en="Support Analyst">Analista de Suporte</h3>
-            <p class="co" data-en="TEC+ Intelligent Solutions">TEC+ Soluções Inteligentes</p>
-            <ul class="pts">
-              <li data-en="Administered Windows and Linux servers across <b>30+</b> machines.">Administração de servidores Windows e Linux em <b>30+</b> máquinas.</li>
-              <li data-en="Installed and configured Zabbix with personalised templates.">Instalação e configuração de Zabbix com templates personalizados.</li>
-              <li data-en="Created Grafana dashboards for performance monitoring and alerting.">Criação de dashboards Grafana para monitoramento de performance e alertas.</li>
-              <li data-en="Delivered 2nd/3rd level support with an average resolution time of <b>4h</b>.">Suporte técnico de 2º/3º nível com tempo médio de resolução de <b>4h</b>.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="role-item">
-          <p class="role-when"><b data-en="Oct 2018 — Apr 2022">Out 2018 — Abr 2022</b><span data-en="3 years 6 months">3 anos 6 meses</span></p>
-          <div class="role-head">
-            <h3 data-en="Support Analyst">Analista de Suporte</h3>
-            <p class="co">IP5 Tecnologia Ltda</p>
-            <ul class="pts">
-              <li data-en="Provided 2nd level technical support for <b>40+</b> corporate clients.">Suporte técnico de 2º nível para <b>40+</b> clientes corporativos.</li>
-              <li data-en="Administered Windows and Linux servers with emphasis on security and performance.">Administração de servidores Windows e Linux com foco em segurança e performance.</li>
-              <li data-en="Deployed Zabbix and Grafana monitoring across diverse customer environments.">Implantação de Zabbix e Grafana em ambientes diversos de clientes.</li>
-              <li data-en="Tested and validated specific requirements, backed by technical documentation.">Testes e validação de demandas específicas, com documentação técnica.</li>
-            </ul>
-          </div>
-        </article>
-
-        <div class="early">
-          <h3 data-en="Earlier — the technician years">Início — os anos de técnico</h3>
-          <ul>
-            <li><em data-en="Systems Technician · Microservice">Técnico de Sistemas · Microservice</em><span>2017—2018</span></li>
-            <li><em data-en="Support Technician · Datainfo">Técnico de Suporte · Datainfo</em><span>2016—2017</span></li>
-            <li><em data-en="Infrastructure Technician · Mult Sistemas">Técnico em Infraestrutura · Mult Sistemas</em><span>2015—2016</span></li>
-            <li><em data-en="IT Assistant · Takai Veículos">Assistente de Informática · Takai Veículos</em><span>2014—2015</span></li>
+    <div class="roles">
+      <article class="role-item current" data-reveal>
+        <p class="role-when"><b data-en="Dec 2022 — present">Dez 2022 — presente</b><span class="tag" data-en="3+ years">3+ anos</span></p>
+        <div class="role-head">
+          <h3 data-en="Senior Infrastructure Engineer">Engenheiro de Infraestrutura Sênior</h3>
+          <p class="co">Benner</p>
+          <ul class="pts">
+            <li data-en="Deployed and maintained Zabbix infrastructure for <b>50+ clients</b>, holding <b>99.5%</b> uptime in mission-critical environments.">Implantação e manutenção de infraestrutura Zabbix para <b>50+ clientes</b>, sustentando <b>99,5%</b> de uptime em ambientes de missão crítica.</li>
+            <li data-en="Automated <b>80%</b> of user provisioning with Python scripts, cutting manual work from <b>40h</b> to <b>8h</b> per month.">Automação de <b>80%</b> dos processos de provisionamento de usuários via scripts Python, reduzindo o trabalho manual de <b>40h</b> para <b>8h</b> por mês.</li>
+            <li data-en="Built custom templates (infrastructure, system, applications) covering <b>200+</b> monitored metrics per client.">Criação de templates customizados (infraestrutura, sistema, aplicações) com <b>200+</b> métricas monitoradas por cliente.</li>
+            <li data-en="Developed Grafana dashboards for real-time performance visibility, reducing MTTR by <b>25%</b>.">Desenvolvimento de dashboards Grafana para visualização de performance em tempo real, reduzindo o MTTR em <b>25%</b>.</li>
+            <li data-en="Ran strategic technical support and cloud demand management (Azure / OCI) for critical accounts.">Suporte técnico estratégico e gestão de demandas cloud (Azure / OCI) para clientes críticos.</li>
+            <li data-en="Implemented Active Directory automation: user deprovisioning, access grants and automated notifications.">Implementação de automação no Active Directory: inativação de usuários, concessão de acessos e envio automatizado de e-mails.</li>
           </ul>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section id="competencias">
-      <p class="eyebrow"><span data-en="04 — Skills">04 — Competências</span></p>
-      <h2 data-en="The stack I run on">A stack que opero</h2>
-      <div class="skills">
-        <div class="sk">
-          <h3 data-en="Monitoring &amp; observability">Monitoramento &amp; observabilidade</h3>
-          <ul>
-            <li>Zabbix<i data-en="configuration, custom templates, GPO automation">configuração, templates customizados, automação via GPO</i></li>
-            <li>Grafana<i data-en="dashboards, alerting, monitoring TV">dashboards, alertas, TV de monitoramento</i></li>
-            <li>Prometheus<i data-en="hands-on experience">experiência prática</i></li>
-            <li>ELK Stack<i data-en="hands-on experience">experiência prática</i></li>
+      <article class="role-item" data-reveal>
+        <p class="role-when"><b data-en="Apr — Nov 2022">Abr — Nov 2022</b><span class="tag" data-en="8 months">8 meses</span></p>
+        <div class="role-head">
+          <h3 data-en="Support Analyst">Analista de Suporte</h3>
+          <p class="co" data-en="TEC+ Intelligent Solutions">TEC+ Soluções Inteligentes</p>
+          <ul class="pts">
+            <li data-en="Administered Windows and Linux servers across <b>30+</b> machines.">Administração de servidores Windows e Linux em <b>30+</b> máquinas.</li>
+            <li data-en="Installed and configured Zabbix with personalised templates.">Instalação e configuração de Zabbix com templates personalizados.</li>
+            <li data-en="Created Grafana dashboards for performance monitoring and alerting.">Criação de dashboards Grafana para monitoramento de performance e alertas.</li>
+            <li data-en="Delivered 2nd/3rd level support with an average resolution time of <b>4h</b>.">Suporte técnico de 2º/3º nível com tempo médio de resolução de <b>4h</b>.</li>
           </ul>
         </div>
-        <div class="sk">
-          <h3 data-en="Automation &amp; scripting">Automação &amp; scripting</h3>
-          <ul>
-            <li>Python<i data-en="infra automation, provisioning, API integration">automação de infra, provisionamento, integração de APIs</i></li>
-            <li>PowerShell<i data-en="advanced scripts, Windows automation">scripts avançados, automação Windows</i></li>
-            <li>Bash / Shell<i data-en="Linux operations">operação Linux</i></li>
-          </ul>
-        </div>
-        <div class="sk">
-          <h3 data-en="Infrastructure &amp; cloud">Infraestrutura &amp; cloud</h3>
-          <ul>
-            <li>Microsoft Azure<i data-en="VMs, App Service, networking">VMs, App Service, networking</i></li>
-            <li>Oracle Cloud Infrastructure<i>OCI</i></li>
-            <li>Active Directory<i data-en="administration, automation, GPO">administração, automação, GPO</i></li>
-            <li>Windows Server<i>2016+</i></li>
-            <li>Linux<i>Ubuntu, CentOS, Debian</i></li>
-          </ul>
-        </div>
-        <div class="sk">
-          <h3 data-en="Platform &amp; networking">Plataforma &amp; redes</h3>
-          <ul>
-            <li>Microsoft 365<i>Exchange, Teams, SharePoint</i></li>
-            <li><span data-en="Virtualization">Virtualização</span><i>Hyper-V, vSphere</i></li>
-            <li><span data-en="TCP/IP networks">Redes TCP/IP</span><i>DNS, DHCP</i></li>
-          </ul>
-        </div>
-      </div>
+      </article>
 
-      <ul class="strengths">
-        <li data-en="Multinational clients">Clientes multinacionais</li>
-        <li data-en="High-availability environments">Alta disponibilidade</li>
-        <li>SRE</li>
-        <li data-en="DevOps &amp; CI/CD mindset">Mentalidade DevOps &amp; CI/CD</li>
-        <li data-en="Open-source contributions">Contribuições open-source</li>
+      <article class="role-item" data-reveal>
+        <p class="role-when"><b data-en="Oct 2018 — Apr 2022">Out 2018 — Abr 2022</b><span class="tag" data-en="3 years 6 months">3 anos 6 meses</span></p>
+        <div class="role-head">
+          <h3 data-en="Support Analyst">Analista de Suporte</h3>
+          <p class="co">IP5 Tecnologia Ltda</p>
+          <ul class="pts">
+            <li data-en="Provided 2nd level technical support for <b>40+</b> corporate clients.">Suporte técnico de 2º nível para <b>40+</b> clientes corporativos.</li>
+            <li data-en="Administered Windows and Linux servers with emphasis on security and performance.">Administração de servidores Windows e Linux com foco em segurança e performance.</li>
+            <li data-en="Deployed Zabbix and Grafana monitoring across diverse customer environments.">Implantação de Zabbix e Grafana em ambientes diversos de clientes.</li>
+            <li data-en="Tested and validated specific requirements, backed by technical documentation.">Testes e validação de demandas específicas, com documentação técnica.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="early" data-reveal>
+      <h3 data-en="Earlier — the technician years">Início — os anos de técnico</h3>
+      <ul>
+        <li><em data-en="Systems Technician · Microservice">Técnico de Sistemas · Microservice</em><span>2017—2018</span></li>
+        <li><em data-en="Support Technician · Datainfo">Técnico de Suporte · Datainfo</em><span>2016—2017</span></li>
+        <li><em data-en="Infrastructure Technician · Mult Sistemas">Técnico em Infraestrutura · Mult Sistemas</em><span>2015—2016</span></li>
+        <li><em data-en="IT Assistant · Takai Veículos">Assistente de Informática · Takai Veículos</em><span>2014—2015</span></li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section id="formacao">
-      <p class="eyebrow"><span data-en="05 — Education &amp; languages">05 — Formação &amp; idiomas</span></p>
-      <div class="facts">
-        <div class="fact">
-          <h3 data-en="Education">Formação</h3>
-          <p class="deg" data-en="BSc in Information Systems">Bacharelado em Sistemas de Informação</p>
-          <p class="inst" data-en="Regional University of Blumenau (FURB)">Universidade Regional de Blumenau (FURB)</p>
-          <p class="yr">2014 — 2021</p>
-        </div>
-        <div class="fact">
-          <h3 data-en="Languages">Idiomas</h3>
-          <ul class="langbar">
-            <li><span data-en="Portuguese">Português</span><em data-en="Native">Nativo</em></li>
-            <li><span data-en="English">Inglês</span><em data-en="B1 · advanced technical reading">B1 · leitura técnica avançada</em></li>
-          </ul>
+  <section id="competencias" class="wrap">
+    <p class="eyebrow" data-en="Skills">Competências</p>
+    <h2 data-reveal data-en="A stack que eu opero.">A stack que eu opero.</h2>
+    <p class="section-sub" data-reveal data-en="What I reach for daily, and why it's on the list.">O que eu uso no dia a dia, e por que está na lista.</p>
+
+    <div class="skills">
+      <div class="sk" data-reveal>
+        <h3 data-en="Monitoring &amp; observability">Monitoramento &amp; observabilidade</h3>
+        <div class="chips">
+          <span class="chip">Zabbix<small data-en="config, templates, GPO">config, templates, GPO</small></span>
+          <span class="chip">Grafana<small data-en="dashboards, alerting">dashboards, alertas</small></span>
+          <span class="chip">Prometheus</span>
+          <span class="chip">ELK Stack</span>
         </div>
       </div>
-    </section>
-
-    <section id="contato">
-      <div class="cta">
-        <div>
-          <p class="eyebrow"><span data-en="06 — Contact">06 — Contato</span></p>
-          <h2 data-en="Let's talk about infrastructure that stays up.">Vamos falar sobre infraestrutura que não cai.</h2>
-          <p data-en="Open to senior infrastructure, SRE and observability roles — remote or hybrid.">Aberto a posições de infraestrutura sênior, SRE e observabilidade — remoto ou híbrido.</p>
-        </div>
-        <div class="cta-links">
-          <a class="primary" href="mailto:raamon.machado030@gmail.com" data-en="Send an email">Enviar e-mail</a>
-          <a href="https://linkedin.com/in/ramonmachado-blasius" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="sk" data-reveal>
+        <h3 data-en="Automation &amp; scripting">Automação &amp; scripting</h3>
+        <div class="chips">
+          <span class="chip">Python<small data-en="infra automation, APIs">automação, APIs</small></span>
+          <span class="chip">PowerShell<small data-en="Windows automation">automação Windows</small></span>
+          <span class="chip">Bash / Shell</span>
         </div>
       </div>
-      <footer>
-        <span>Ramon Machado Blasius</span>
-        <span data-en="Senior Infrastructure Engineer">Engenheiro de Infraestrutura Sênior</span>
-        <span>Brasil</span>
-      </footer>
-    </section>
-  </main>
-</div>
+      <div class="sk" data-reveal>
+        <h3 data-en="Infrastructure &amp; cloud">Infraestrutura &amp; cloud</h3>
+        <div class="chips">
+          <span class="chip">Microsoft Azure<small data-en="VMs, App Service">VMs, App Service</small></span>
+          <span class="chip">OCI</span>
+          <span class="chip">Active Directory</span>
+          <span class="chip">Windows Server</span>
+          <span class="chip">Linux<small>Ubuntu, CentOS, Debian</small></span>
+        </div>
+      </div>
+      <div class="sk" data-reveal>
+        <h3 data-en="Platform &amp; networking">Plataforma &amp; redes</h3>
+        <div class="chips">
+          <span class="chip">Microsoft 365<small>Exchange, Teams</small></span>
+          <span class="chip" data-en="Virtualization">Virtualização<small>Hyper-V, vSphere</small></span>
+          <span class="chip" data-en="TCP/IP networks">Redes TCP/IP<small>DNS, DHCP</small></span>
+        </div>
+      </div>
+    </div>
+
+    <ul class="strengths" data-reveal>
+      <li data-en="Multinational clients">Clientes multinacionais</li>
+      <li data-en="High-availability environments">Alta disponibilidade</li>
+      <li>SRE</li>
+      <li data-en="DevOps &amp; CI/CD mindset">Mentalidade DevOps &amp; CI/CD</li>
+      <li data-en="Open-source contributions">Contribuições open-source</li>
+    </ul>
+  </section>
+
+  <section id="formacao" class="wrap">
+    <p class="eyebrow" data-en="Education &amp; languages">Formação &amp; idiomas</p>
+    <h2 data-reveal data-en="Base acadêmica &amp; idiomas.">Base acadêmica &amp; idiomas.</h2>
+    <div class="facts">
+      <div class="fact" data-reveal>
+        <h3 data-en="Education">Formação</h3>
+        <p class="deg" data-en="BSc in Information Systems">Bacharelado em Sistemas de Informação</p>
+        <p class="inst" data-en="Regional University of Blumenau (FURB)">Universidade Regional de Blumenau (FURB)</p>
+        <p class="yr">2014 — 2021</p>
+      </div>
+      <div class="fact" data-reveal>
+        <h3 data-en="Languages">Idiomas</h3>
+        <ul class="langbar">
+          <li><span data-en="Portuguese">Português</span><em data-en="Native">Nativo</em></li>
+          <li><span data-en="English">Inglês</span><em data-en="B1 · advanced technical reading">B1 · leitura técnica avançada</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="wrap">
+    <div class="cta-block" data-reveal>
+      <p class="eyebrow" data-en="Contact">Contato</p>
+      <h2 data-en="Let's talk about infrastructure that stays up.">Vamos falar sobre infraestrutura que não cai.</h2>
+      <p data-en="Open to senior infrastructure, SRE and observability roles — remote or hybrid.">Aberto a posições de infraestrutura sênior, SRE e observabilidade — remoto ou híbrido.</p>
+      <div class="cta-links">
+        <a class="primary" href="mailto:raamon.machado030@gmail.com" data-en="Send an email">Enviar e-mail</a>
+        <a class="ghost" href="https://linkedin.com/in/ramonmachado-blasius" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <footer>
+      <span>Ramon Machado Blasius</span>
+      <span data-en="Senior Infrastructure Engineer · Brazil">Engenheiro de Infraestrutura Sênior · Brasil</span>
+    </footer>
+  </section>
+</main>
 
 <script>
   (function () {
@@ -469,6 +601,24 @@
     try {
       if (localStorage.getItem('rmb-lang') === 'en') { apply('en'); }
     } catch (e) {}
+  })();
+
+  (function () {
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced || !('IntersectionObserver' in window)) return;
+
+    document.documentElement.classList.add('reveal-armed');
+    var targets = document.querySelectorAll('[data-reveal]');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    targets.forEach(function (t) { io.observe(t); });
   })();
 </script>
 </body>
