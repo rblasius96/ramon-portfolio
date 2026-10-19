@@ -418,6 +418,39 @@
   .to-top{color:var(--ink-2);text-decoration:none}
   .to-top:hover{color:var(--accent)}
 
+  /* projects / dashboard gallery */
+  .proj{padding:22px;border-radius:24px}
+  .proj-head{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:14px 28px;margin:4px 4px 20px}
+  .proj-head h3{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.02em;margin:0 0 6px}
+  .proj-head p{margin:0;color:var(--ink-2);font-size:15px;max-width:62ch}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:6px;max-width:360px}
+  .proj-tags span{font-family:var(--mono);font-size:11px;color:var(--ink-2);padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface-2)}
+  .shot{
+    position:relative;display:block;width:100%;padding:0;margin:0;cursor:zoom-in;font:inherit;color:inherit;text-align:left;
+    border:1px solid var(--line-strong);border-radius:14px;overflow:hidden;background:#0B0F1C;
+    transition:transform .5s var(--ease),box-shadow .4s ease,border-color .3s ease;
+  }
+  .shot:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 50%,transparent);box-shadow:var(--shadow-lg)}
+  .shot img{width:100%;height:auto}
+  .shot figcaption{
+    position:absolute;left:10px;bottom:10px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:#EDF2FA;
+    padding:5px 10px;border-radius:8px;background:rgba(6,10,19,.72);border:1px solid rgba(148,178,230,.18);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  }
+  .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+  .shots-wide{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:12px}
+  @media (max-width:760px){ .shots{grid-template-columns:minmax(0,1fr)} .proj{padding:14px} }
+  .proj-notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px;padding:0;list-style:none}
+  .proj-notes li{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--surface-2);font-size:14px;color:var(--ink-2)}
+  .proj-notes b{display:block;font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink);margin-bottom:4px}
+  @media (max-width:760px){ .proj-notes{grid-template-columns:minmax(0,1fr)} }
+
+  .lightbox{border:0;padding:0;background:transparent;max-width:min(1500px,96vw);max-height:94vh;overflow:visible}
+  .lightbox::backdrop{background:rgba(3,6,12,.86);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .lightbox img{max-width:min(1500px,96vw);max-height:88vh;width:auto;height:auto;border-radius:12px;border:1px solid rgba(148,178,230,.2)}
+  .lightbox p{margin:10px 2px 0;font-family:var(--mono);font-size:12px;color:#A9B5C8}
+  .lightbox button{position:absolute;top:-14px;right:-14px;width:34px;height:34px;border-radius:50%;border:1px solid rgba(148,178,230,.3);background:#0D1424;color:#EDF2FA;font-size:18px;line-height:1;cursor:pointer}
+
   @media (max-width:640px){
     section.wrap{padding-top:80px}
     .brand .bt small{display:none}
@@ -454,6 +487,7 @@
   <div class="topnav-links">
     <a href="#perfil" data-en="Profile">Perfil</a>
     <a href="#impacto" data-en="Impact">Impacto</a>
+    <a href="#projetos" data-en="Projects">Projetos</a>
     <a href="#trajetoria" data-en="Career">Trajetória</a>
     <a href="#competencias" data-en="Skills">Competências</a>
     <a href="#contato" data-en="Contact">Contato</a>
@@ -537,6 +571,59 @@
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
         <div class="fig" data-count>80<em>%</em></div><div class="cap" data-en="of user provisioning automated in Python">provisionamento de usuários automatizado em Python</div>
       </div>
+    </div>
+  </section>
+
+  <section id="projetos" class="wrap">
+    <p class="eyebrow" data-en="Projects">Projetos</p>
+    <h2 data-reveal data-en="A NOC people actually look at.">Um NOC que as pessoas realmente olham.</h2>
+    <p class="section-sub" data-reveal data-en="Grafana dashboards built on top of the Zabbix database, running in production over ~1,300 Windows and Linux servers and web scenarios.">Dashboards Grafana construídos sobre o banco do Zabbix, em produção sobre ~1.300 servidores Windows, Linux e cenários web.</p>
+
+    <div class="proj glass" data-reveal>
+      <div class="proj-head">
+        <div>
+          <h3 data-en="NOC Analytics · Grafana">NOC Analítico · Grafana</h3>
+          <p data-en="Four linked dashboards — Executive, Windows, Linux and Web — with SLA against a configurable target, downtime, MTTR, capacity and incident patterns. Generated from code, not clicked together.">Quatro dashboards interligados — Executivo, Windows, Linux e Web — com SLA contra meta configurável, downtime, MTTR, capacidade e padrões de incidentes. Gerados por código, não montados no clique.</p>
+        </div>
+        <div class="proj-tags"><span>Grafana</span><span>Zabbix 7</span><span>MySQL / SQL</span><span>Apache ECharts</span><span>JavaScript</span></div>
+      </div>
+
+      <figure class="shot" data-shot style="margin:0">
+        <img src="img/grafana/noc-executivo.webp" width="1548" height="584" loading="lazy" decoding="async" alt="Dashboard NOC Visão Executiva: SLA global de 99,198%, SLA por ambiente, KPIs de downtime, incidentes e MTTR">
+        <figcaption data-en="Executive view">Visão Executiva</figcaption>
+      </figure>
+
+      <div class="shots">
+        <figure class="shot" data-shot style="margin:0">
+          <img src="img/grafana/noc-windows.webp" width="1548" height="584" loading="lazy" decoding="async" alt="Dashboard NOC Servidores Windows: SLA do período, CPU, memória e agentes online">
+          <figcaption data-en="Windows servers">Servidores Windows</figcaption>
+        </figure>
+        <figure class="shot" data-shot style="margin:0">
+          <img src="img/grafana/noc-linux.webp" width="1548" height="584" loading="lazy" decoding="async" alt="Dashboard NOC Servidores Linux: SLA do período, capacidade média e distribuição de SLA">
+          <figcaption data-en="Linux servers">Servidores Linux</figcaption>
+        </figure>
+        <figure class="shot" data-shot style="margin:0">
+          <img src="img/grafana/noc-web.webp" width="1548" height="584" loading="lazy" decoding="async" alt="Dashboard NOC Web / Cenários: SLA, saúde dos cenários e tempo de resposta">
+          <figcaption data-en="Web scenarios">Web / Cenários</figcaption>
+        </figure>
+      </div>
+
+      <div class="shots-wide">
+        <figure class="shot" data-shot style="margin:0">
+          <img src="img/grafana/noc-incidentes.webp" width="1548" height="302" loading="lazy" decoding="async" alt="Incidentes por dia e severidade e distribuição de SLA por ambiente">
+          <figcaption data-en="Incidents per day · SLA distribution">Incidentes por dia · distribuição de SLA</figcaption>
+        </figure>
+        <figure class="shot" data-shot style="margin:0">
+          <img src="img/grafana/noc-heatmap.webp" width="1548" height="316" loading="lazy" decoding="async" alt="Mapa de calor de incidentes por dia da semana e hora, e problemas mais recorrentes">
+          <figcaption data-en="Day × hour heatmap · top recurring problems">Mapa de calor dia × hora · problemas recorrentes</figcaption>
+        </figure>
+      </div>
+
+      <ul class="proj-notes">
+        <li><b data-en="Straight from the source">Direto da fonte</b><span data-en="SQL on Zabbix trends, events and problems — hourly SLA from ICMP and agent availability, without touching the raw history tables.">SQL sobre trends, events e problems do Zabbix — SLA horário a partir de ICMP e disponibilidade do agente, sem tocar nas tabelas de history.</span></li>
+        <li><b data-en="Dashboards as code">Dashboards como código</b><span data-en="A JavaScript generator builds and deploys all four dashboards through the Grafana API, sharing the same queries between modern and classic versions.">Um gerador em JavaScript monta e publica os quatro dashboards via API do Grafana, compartilhando as mesmas queries entre as versões moderna e clássica.</span></li>
+        <li><b data-en="Made for the wall">Feito para a parede</b><span data-en="ECharts gauges, rings and heatmaps with a custom dark theme, readable from across the room on a NOC TV.">Gauges, anéis e mapas de calor em ECharts com tema escuro próprio, legíveis do outro lado da sala na TV do NOC.</span></li>
+      </ul>
     </div>
   </section>
 
@@ -764,6 +851,33 @@
     try {
       if (localStorage.getItem('rmb-lang') === 'en') { apply('en'); }
     } catch (e) {}
+  })();
+
+  // dashboard lightbox
+  (function () {
+    var shots = document.querySelectorAll('[data-shot]');
+    if (!shots.length || typeof HTMLDialogElement !== 'function') return;
+    var dlg = document.createElement('dialog');
+    dlg.className = 'lightbox';
+    dlg.innerHTML = '<button type="button" aria-label="Fechar / Close">&times;</button><img alt=""><p></p>';
+    document.body.appendChild(dlg);
+    var big = dlg.querySelector('img');
+    var cap = dlg.querySelector('p');
+    dlg.querySelector('button').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    shots.forEach(function (s) {
+      var img = s.querySelector('img');
+      s.setAttribute('tabindex', '0');
+      s.setAttribute('role', 'button');
+      function open() {
+        big.src = img.src;
+        big.alt = img.alt;
+        cap.textContent = s.querySelector('figcaption').textContent;
+        dlg.showModal();
+      }
+      s.addEventListener('click', open);
+      s.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    });
   })();
 
   // theme
