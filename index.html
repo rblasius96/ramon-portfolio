@@ -289,11 +289,6 @@
   .glass:hover::before,.glass:hover::after{opacity:1}
   .glass:hover{box-shadow:var(--shadow-lg)}
 
-  /* impact / bento */
-  .impact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-  .impact-grid .card:nth-child(1){grid-column:span 2}
-  .impact-grid .card:nth-child(4),.impact-grid .card:nth-child(5){grid-column:span 2}
-  @media (max-width:760px){ .impact-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .impact-grid .card:nth-child(n){grid-column:auto} .impact-grid .card:nth-child(1),.impact-grid .card:nth-child(6){grid-column:span 2} }
   .card{padding:26px 24px 22px;min-height:168px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
   .card .fig{font-family:var(--display);font-weight:700;font-size:clamp(38px,5vw,58px);letter-spacing:-.05em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
   .card .fig em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -486,7 +481,6 @@
   </a>
   <div class="topnav-links">
     <a href="#perfil" data-en="Profile">Perfil</a>
-    <a href="#impacto" data-en="Impact">Impacto</a>
     <a href="#projetos" data-en="Projects">Projetos</a>
     <a href="#trajetoria" data-en="Career">Trajetória</a>
     <a href="#competencias" data-en="Skills">Competências</a>
@@ -510,7 +504,7 @@
 
     <h1><span class="line"><span>Ramon Machado</span></span><span class="line"><span class="grad-text">Blasius</span></span></h1>
     <p class="role fade-up" data-en="Senior Infrastructure Engineer · Cloud · Automation · Observability">Engenheiro de Infraestrutura Sênior · Cloud · Automação · Observabilidade</p>
-    <p class="lead fade-up" data-en="I keep mission-critical environments observable, automated and quiet. <b>8+ years</b> specializing in Zabbix, Grafana and Python — turning noisy infrastructure into dashboards people actually act on.">Mantenho ambientes de missão crítica observáveis, automatizados e silenciosos. <b>8+ anos</b> especializado em Zabbix, Grafana e Python — transformando infraestrutura ruidosa em painéis sobre os quais alguém realmente age.</p>
+    <p class="lead fade-up" data-en="I keep mission-critical environments observable, automated and quiet. <b>10+ years</b> in IT, specializing in Zabbix, Grafana and Python — turning noisy infrastructure into dashboards people actually act on.">Mantenho ambientes de missão crítica observáveis, automatizados e silenciosos. <b>10+ anos</b> em TI, especializado em Zabbix, Grafana e Python — transformando infraestrutura ruidosa em painéis sobre os quais alguém realmente age.</p>
 
     <div class="hero-cta fade-up">
       <a class="btn btn-primary magnetic" href="mailto:raamon.machado030@gmail.com"><span data-en="Send an email">Enviar e-mail</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -518,10 +512,10 @@
     </div>
 
     <div class="hero-stats fade-up">
-      <div class="hstat"><div class="n" data-count>99,5<em>%</em></div><div class="l" data-en="uptime, mission-critical">uptime, missão crítica</div></div>
-      <div class="hstat"><div class="n" data-count>50<em>+</em></div><div class="l" data-en="clients monitored">clientes monitorados</div></div>
-      <div class="hstat"><div class="n" data-count>8<em>+</em></div><div class="l" data-en="years in infrastructure">anos em infraestrutura</div></div>
-      <div class="hstat"><div class="n" data-count><em>−</em>25<em>%</em></div><div class="l">MTTR</div></div>
+      <div class="hstat"><div class="n" data-count><em>~</em>1300</div><div class="l" data-en="servers on the NOC dashboards">servidores nos dashboards NOC</div></div>
+      <div class="hstat"><div class="n" data-count>10<em>+</em></div><div class="l" data-en="years in IT">anos em TI</div></div>
+      <div class="hstat"><div class="n" data-count>4</div><div class="l" data-en="NOC dashboards as code">dashboards NOC como código</div></div>
+      <div class="hstat"><div class="n" data-count>2</div><div class="l" data-en="clouds: Azure · OCI">clouds: Azure · OCI</div></div>
     </div>
 
     <div class="scroll-hint fade-up" aria-hidden="true"><span class="mouse"></span><span data-en="Scroll">Role a página</span></div>
@@ -529,49 +523,15 @@
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Zabbix</span><span>Grafana</span><span>Python</span><span>Microsoft Azure</span><span>Oracle Cloud</span><span>Active Directory</span><span>Prometheus</span><span>PowerShell</span><span>Linux</span><span>ELK Stack</span><span>Windows Server</span><span>Hyper-V</span>
-      <span>Zabbix</span><span>Grafana</span><span>Python</span><span>Microsoft Azure</span><span>Oracle Cloud</span><span>Active Directory</span><span>Prometheus</span><span>PowerShell</span><span>Linux</span><span>ELK Stack</span><span>Windows Server</span><span>Hyper-V</span>
+      <span>Zabbix</span><span>Grafana</span><span>Python</span><span>Microsoft Azure</span><span>Oracle Cloud</span><span>Active Directory</span><span>PowerShell</span><span>Linux</span><span>Elastic</span><span>Windows Server</span><span>Microsoft 365</span>
+      <span>Zabbix</span><span>Grafana</span><span>Python</span><span>Microsoft Azure</span><span>Oracle Cloud</span><span>Active Directory</span><span>PowerShell</span><span>Linux</span><span>Elastic</span><span>Windows Server</span><span>Microsoft 365</span>
     </div>
   </div>
 
   <section id="perfil" class="wrap">
     <p class="eyebrow" data-en="Profile">Perfil</p>
     <h2 data-reveal data-en="Infrastructure that doesn't wake you up at 3 a.m.">Infraestrutura que não te acorda às 3 da manhã.</h2>
-    <p class="section-sub" data-reveal data-en="Specialist in Zabbix, Grafana and Python, with solid ground in Azure, OCI and Active Directory. Track record of observability solutions that lifted operational efficiency by 40%, automation that cut manual work from 40h to 8h a month, and 2nd/3rd level technical support for multinational clients.">Especialista em Zabbix, Grafana e Python, com base sólida em Azure, OCI e Active Directory. Histórico de soluções de observabilidade que elevaram a eficiência operacional em 40%, automação que reduziu o trabalho manual de 40h para 8h por mês e suporte técnico de 2º e 3º nível para clientes multinacionais.</p>
-  </section>
-
-  <section id="impacto" class="wrap">
-    <p class="eyebrow" data-en="Measured impact">Impacto medido</p>
-    <h2 data-reveal data-en="Numbers, not adjectives.">Números, não adjetivos.</h2>
-    <p class="section-sub" data-reveal data-en="What changed after I got involved.">O que mudou depois que entrei.</p>
-    <div class="impact-grid">
-      <div class="card glass" data-reveal>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-        <div class="fig" data-count>99,5<em>%</em></div><div class="cap" data-en="uptime across mission-critical environments">uptime em ambientes de missão crítica</div>
-        <svg class="spark" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true"><path class="a" d="M0 96 L30 88 L60 92 L90 70 L120 76 L150 52 L180 58 L210 36 L240 42 L270 20 L300 16 L300 120 L0 120Z"/><path class="l" d="M0 96 L30 88 L60 92 L90 70 L120 76 L150 52 L180 58 L210 36 L240 42 L270 20 L300 16"/></svg>
-      </div>
-      <div class="card glass" data-reveal style="--d:.08s">
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span>
-        <div class="fig" data-count>50<em>+</em></div><div class="cap" data-en="clients on monitoring infrastructure">clientes em infraestrutura de monitoramento</div>
-      </div>
-      <div class="card glass" data-reveal>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 5-6"/></svg></span>
-        <div class="fig" data-count>200<em>+</em></div><div class="cap" data-en="metrics monitored per client">métricas monitoradas por cliente</div>
-      </div>
-      <div class="card glass" data-reveal style="--d:.08s">
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-        <div class="fig" data-count><em>−</em>25<em>%</em></div><div class="cap" data-en="MTTR after Grafana dashboards">MTTR após dashboards Grafana</div>
-      </div>
-      <div class="card glass" data-reveal style="--d:.16s">
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-        <div class="fig" data-count>40<em>→</em>8<em>h</em></div><div class="cap" data-en="manual work per month, after automation">trabalho manual por mês, após automação</div>
-        <svg class="spark" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true"><path class="a" d="M0 18 L40 22 L80 30 L120 46 L160 70 L200 86 L240 96 L300 100 L300 120 L0 120Z"/><path class="l" d="M0 18 L40 22 L80 30 L120 46 L160 70 L200 86 L240 96 L300 100"/></svg>
-      </div>
-      <div class="card glass" data-reveal>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
-        <div class="fig" data-count>80<em>%</em></div><div class="cap" data-en="of user provisioning automated in Python">provisionamento de usuários automatizado em Python</div>
-      </div>
-    </div>
+    <p class="section-sub" data-reveal data-en="Specialist in Zabbix, Grafana and Python, with solid ground in Azure, OCI and Active Directory. Track record of delivering monitoring dashboards, removing manual operational work through Python and PowerShell automation, and providing 2nd/3rd level technical support to critical customers.">Especialista em Zabbix, Grafana e Python, com base sólida em Azure, OCI e Active Directory. Histórico de entrega de dashboards de monitoramento, eliminação de trabalho operacional manual com automação em Python e PowerShell, e suporte técnico de 2º e 3º nível a clientes críticos.</p>
   </section>
 
   <section id="projetos" class="wrap">
@@ -666,15 +626,14 @@
         <span class="glow-edge" aria-hidden="true"></span>
         <p class="role-when"><b data-en="Dec 2022 — present">Dez 2022 — presente</b><span class="tag" data-en="3+ years">3+ anos</span><span class="tag now" data-en="● Current">● Atual</span></p>
         <div class="role-head">
-          <h3 data-en="Senior Infrastructure Engineer">Engenheiro de Infraestrutura Sênior</h3>
+          <h3 data-en="Senior Infrastructure Analyst">Analista de Infraestrutura Sênior</h3>
           <p class="co grad-text">Benner</p>
           <ul class="pts">
-            <li data-en="Deployed and maintained Zabbix infrastructure for <b>50+ clients</b>, holding <b>99.5%</b> uptime in mission-critical environments.">Implantação e manutenção de infraestrutura Zabbix para <b>50+ clientes</b>, sustentando <b>99,5%</b> de uptime em ambientes de missão crítica.</li>
-            <li data-en="Automated <b>80%</b> of user provisioning with Python scripts, cutting manual work from <b>40h</b> to <b>8h</b> per month.">Automação de <b>80%</b> dos processos de provisionamento de usuários via scripts Python, reduzindo o trabalho manual de <b>40h</b> para <b>8h</b> por mês.</li>
-            <li data-en="Built custom templates (infrastructure, system, applications) covering <b>200+</b> monitored metrics per client.">Criação de templates customizados (infraestrutura, sistema, aplicações) com <b>200+</b> métricas monitoradas por cliente.</li>
-            <li data-en="Developed Grafana dashboards for real-time performance visibility, reducing MTTR by <b>25%</b>.">Desenvolvimento de dashboards Grafana para visualização de performance em tempo real, reduzindo o MTTR em <b>25%</b>.</li>
-            <li data-en="Ran strategic technical support and cloud demand management (Azure / OCI) for critical accounts.">Suporte técnico estratégico e gestão de demandas cloud (Azure / OCI) para clientes críticos.</li>
-            <li data-en="Implemented Active Directory automation: user deprovisioning, access grants and automated notifications.">Implementação de automação no Active Directory: inativação de usuários, concessão de acessos e envio automatizado de e-mails.</li>
+            <li data-en="Deployed and configured Zabbix for mission-critical environments, automating agent rollout through <b>Active Directory GPO</b> and standardising the deployment process.">Implantação e configuração do Zabbix em ambientes de missão crítica, automatizando a distribuição de agentes via <b>GPO no Active Directory</b> e padronizando o deploy.</li>
+            <li data-en="Built dedicated monitoring templates (infrastructure and application) and custom scripts, extending observability coverage over essential services.">Criação de templates exclusivos de monitoramento (infraestrutura e sistema) e scripts personalizados, ampliando a cobertura de observabilidade sobre serviços essenciais.</li>
+            <li data-en="Created Grafana performance dashboards and <b>NOC TV panels</b> with real-time visibility of environment health for customers and internal teams.">Criação de dashboards de performance e <b>painéis de TV do NOC</b> no Grafana, com visibilidade em tempo real da saúde dos ambientes para clientes e equipes internas.</li>
+            <li data-en="Automated in <b>Python</b> the customer provisioning, user deactivation, access granting and e-mail notification routines in Active Directory.">Automação em <b>Python</b> de provisionamento de clientes, inativação de usuários, concessão de acessos e disparo de e-mails no Active Directory.</li>
+            <li data-en="Technical and strategic point of contact for <b>Azure</b> cloud demands of critical customers.">Ponto focal técnico e estratégico nas demandas de nuvem <b>Azure</b> de clientes críticos.</li>
           </ul>
         </div>
       </article>
@@ -685,10 +644,10 @@
           <h3 data-en="Support Analyst">Analista de Suporte</h3>
           <p class="co grad-text" data-en="TEC+ Intelligent Solutions">TEC+ Soluções Inteligentes</p>
           <ul class="pts">
-            <li data-en="Administered Windows and Linux servers across <b>30+</b> machines.">Administração de servidores Windows e Linux em <b>30+</b> máquinas.</li>
+            <li data-en="Administered Windows and Linux servers; supported Microsoft 365 and Azure environments.">Administração de servidores Windows e Linux; suporte a ambientes Microsoft 365 e Azure.</li>
             <li data-en="Installed and configured Zabbix with personalised templates.">Instalação e configuração de Zabbix com templates personalizados.</li>
             <li data-en="Created Grafana dashboards for performance monitoring and alerting.">Criação de dashboards Grafana para monitoramento de performance e alertas.</li>
-            <li data-en="Delivered 2nd/3rd level support with an average resolution time of <b>4h</b>.">Suporte técnico de 2º/3º nível com tempo médio de resolução de <b>4h</b>.</li>
+            <li data-en="Led technical support and troubleshooting for the customer base.">Condução do suporte técnico e resolução de problemas para a base de clientes.</li>
           </ul>
         </div>
       </article>
@@ -699,7 +658,7 @@
           <h3 data-en="Support Analyst">Analista de Suporte</h3>
           <p class="co grad-text">IP5 Tecnologia Ltda</p>
           <ul class="pts">
-            <li data-en="Provided 2nd level technical support for <b>40+</b> corporate clients.">Suporte técnico de 2º nível para <b>40+</b> clientes corporativos.</li>
+            <li data-en="Provided 2nd level technical support to corporate customers.">Suporte técnico de 2º nível a clientes corporativos.</li>
             <li data-en="Administered Windows and Linux servers with emphasis on security and performance.">Administração de servidores Windows e Linux com foco em segurança e performance.</li>
             <li data-en="Deployed Zabbix and Grafana monitoring across diverse customer environments.">Implantação de Zabbix e Grafana em ambientes diversos de clientes.</li>
             <li data-en="Tested and validated specific requirements, backed by technical documentation.">Testes e validação de demandas específicas, com documentação técnica.</li>
@@ -733,8 +692,7 @@
         <div class="chips">
           <span class="chip">Zabbix<small data-en="config, templates, GPO">config, templates, GPO</small></span>
           <span class="chip">Grafana<small data-en="dashboards, alerting">dashboards, alertas</small></span>
-          <span class="chip">Prometheus</span>
-          <span class="chip">ELK Stack</span>
+          <span class="chip">Elastic</span>
         </div>
       </div>
       <div class="sk glass" data-reveal style="--d:.08s">
@@ -775,11 +733,10 @@
     </div>
 
     <ul class="strengths" data-reveal>
-      <li data-en="Multinational clients">Clientes multinacionais</li>
-      <li data-en="High-availability environments">Alta disponibilidade</li>
-      <li>SRE</li>
-      <li data-en="DevOps &amp; CI/CD mindset">Mentalidade DevOps &amp; CI/CD</li>
-      <li data-en="Open-source contributions">Contribuições open-source</li>
+      <li data-en="Mission-critical environments">Ambientes de missão crítica</li>
+      <li data-en="L2/L3 support">Suporte N2/N3</li>
+      <li data-en="Incident management">Gestão de incidentes</li>
+      <li data-en="Critical customers">Clientes críticos</li>
     </ul>
   </section>
 
@@ -791,7 +748,7 @@
         <h3 data-en="Education">Formação</h3>
         <p class="deg" data-en="BSc in Information Systems">Bacharelado em Sistemas de Informação</p>
         <p class="inst" data-en="Regional University of Blumenau (FURB)">Universidade Regional de Blumenau (FURB)</p>
-        <p class="yr">2014 — 2021</p>
+        <p class="yr" data-en="2014 — 2021 · not completed">2014 — 2021 · não concluído</p>
       </div>
       <div class="fact glass" data-reveal style="--d:.08s">
         <h3 data-en="Languages">Idiomas</h3>
